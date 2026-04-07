@@ -190,3 +190,11 @@
   margin-bottom: 10px;
   font-size: 20px;
 }
+.volver {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  z-index: 20;
+}

@@ -9,7 +9,8 @@
 body {
   font-family: sans-serif;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* 🌌 CANVAS */
@@ -210,16 +211,9 @@ body {
   .acuario     { transform: rotate(300deg) translate(100px) rotate(-300deg); }
   .piscis      { transform: rotate(330deg) translate(100px) rotate(-330deg); }
 
-document.querySelectorAll(".signo").forEach(signo => {
-  signo.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const link = signo.getAttribute("href");
-
-    document.body.classList.add("fade-out");
-
-    setTimeout(() => {
-      window.location.href = link;
-    }, 600);
-  });
-});
+.contenido {
+  max-width: 700px;
+  margin: 100px auto 40px auto;
+  padding: 20px;
+  text-align: center;
+}
