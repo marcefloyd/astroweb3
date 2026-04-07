@@ -1,0 +1,105 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* 🌌 CANVAS */
+#estrellas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 🎥 VIDEO */
+#fondo-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* 🔙 BOTÓN VOLVER */
+.volver {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  z-index: 10;
+}
+
+/* 📦 CONTENIDO */
+.contenido {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+  z-index: 5;
+}
+
+/* 🏷️ TÍTULO */
+.titulo {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+/* 📄 DESCRIPCIÓN */
+.descripcion {
+  max-width: 500px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* 📊 DATOS */
+.datos p {
+  margin: 5px 0;
+}
+
+/* ========================= */
+/* 🌱 ESTILO TIERRA (TAURO) */
+/* ========================= */
+
+.tierra .titulo {
+  color: #6b8e23;
+  text-shadow: 0 0 15px #3b5323, 0 0 30px #2f4f2f;
+}
+
+.tierra .descripcion {
+  color: #e8f5e9;
+}
+
+.tierra .datos {
+  background: rgba(50, 80, 50, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* ✨ HOVER */
+.tierra .titulo:hover {
+  text-shadow:
+    0 0 10px #6b8e23,
+    0 0 20px #3b5323,
+    0 0 40px #2f4f2f;
+}

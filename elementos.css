@@ -1,0 +1,176 @@
+/* 🌍 CONTENEDOR GENERAL */
+.contenido {
+  max-width: 700px;
+  margin: 120px auto 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 🔥 FUEGO */
+.fuego .titulo {
+  color: #ff4500;
+  text-shadow:
+    0 0 10px #ff4500,
+    0 0 20px #ff0000,
+    0 0 40px #ff8c00;
+}
+
+.fuego .titulo:hover {
+  text-shadow:
+    0 0 15px #ff4500,
+    0 0 30px #ff0000,
+    0 0 60px #ffa500;
+}
+
+.fuego .descripcion {
+  color: #ffe4e1;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.fuego .datos {
+  margin-top: 25px;
+  background: rgba(255, 69, 0, 0.25);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+}
+
+/* 🌱 TIERRA */
+.tierra .titulo {
+  color: #6b8e23;
+  text-shadow: 0 0 15px #3b5323, 0 0 30px #2f4f2f;
+}
+
+.tierra .titulo:hover {
+  text-shadow:
+    0 0 10px #6b8e23,
+    0 0 20px #3b5323,
+    0 0 40px #2f4f2f;
+}
+
+.tierra .descripcion {
+  color: #e8f5e9;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.tierra .datos {
+  margin-top: 25px;
+  background: rgba(50, 80, 50, 0.4);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+}
+
+/* 🌬️ AIRE */
+.aire .titulo {
+  color: #7df9ff;
+  text-shadow:
+    0 0 10px #7df9ff,
+    0 0 20px #00e5ff,
+    0 0 40px #00bcd4;
+}
+
+.aire .titulo:hover {
+  text-shadow:
+    0 0 15px #7df9ff,
+    0 0 30px #00e5ff,
+    0 0 60px #00bcd4;
+}
+
+.aire .descripcion {
+  color: #e0f7fa;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.aire .datos {
+  margin-top: 25px;
+  background: rgba(0, 188, 212, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+}
+
+/* 💧 AGUA */
+.agua .titulo {
+  color: #4da6ff;
+  text-shadow:
+    0 0 10px #4da6ff,
+    0 0 20px #0066ff,
+    0 0 40px #0000ff;
+}
+
+.agua .titulo:hover {
+  text-shadow:
+    0 0 15px #4da6ff,
+    0 0 30px #0066ff,
+    0 0 60px #00ccff;
+}
+
+.agua .descripcion {
+  color: #d6ecff;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.agua .datos {
+  margin-top: 25px;
+  background: rgba(0, 102, 204, 0.25);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 102, 255, 0.4);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+
+  .contenido {
+    max-width: 90%;
+    margin: 110px auto 0 auto;
+    padding: 15px;
+  }
+
+  .titulo {
+    font-size: 22px;
+  }
+
+  .descripcion {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .datos {
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+}
+
+/* 📱 EXTRA CHICO (celus más pequeños) */
+@media (max-width: 480px) {
+
+  .contenido {
+    margin-top: 100px;
+    padding: 10px;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+  }
+
+  .datos {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+}
