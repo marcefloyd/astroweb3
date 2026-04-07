@@ -217,3 +217,44 @@ body {
   padding: 20px;
   text-align: center;
 }
+/* 🌌 SEGUNDO CÍRCULO (PLANETAS) */
+.rueda-planetas {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: girarPlanetas 60s linear infinite;
+}
+
+/* PLANETAS */
+.planeta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 28px;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+/* POSICIONES */
+.sol      { transform: rotate(0deg)   translate(300px) rotate(0deg); }
+.luna     { transform: rotate(27deg)  translate(300px) rotate(-27deg); }
+.mercurio { transform: rotate(54deg)  translate(300px) rotate(-54deg); }
+.venus    { transform: rotate(81deg)  translate(300px) rotate(-81deg); }
+.marte    { transform: rotate(108deg) translate(300px) rotate(-108deg); }
+.jupiter  { transform: rotate(135deg) translate(300px) rotate(-135deg); }
+.saturno  { transform: rotate(162deg) translate(300px) rotate(-162deg); }
+.urano    { transform: rotate(189deg) translate(300px) rotate(-189deg); }
+.neptuno  { transform: rotate(216deg) translate(300px) rotate(-216deg); }
+.pluton   { transform: rotate(243deg) translate(300px) rotate(-243deg); }
+.quiron   { transform: rotate(270deg) translate(300px) rotate(-270deg); }
+.nodo     { transform: rotate(297deg) translate(300px) rotate(-297deg); }
+.lilith   { transform: rotate(324deg) translate(300px) rotate(-324deg); }
+
+/* ANIMACIÓN */
+@keyframes girarPlanetas {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
