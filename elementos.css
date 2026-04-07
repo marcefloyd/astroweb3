@@ -1,7 +1,7 @@
 /* 🌍 CONTENEDOR GENERAL */
 .contenido {
   max-width: 700px;
-  margin: 120px auto 0 auto;
+  margin: 100px auto 0 auto; /* 👈 bajamos el espacio */
   padding: 20px;
   text-align: center;
 }
