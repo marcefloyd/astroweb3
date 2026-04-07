@@ -100,3 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+document.querySelectorAll(".signo").forEach(signo => {
+  signo.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const link = signo.getAttribute("href");
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location.href = link;
+    }, 600);
+  });
+});
