@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+
+  /* 🪐 fondo profundo con tono púrpura/dorado */
+  background: radial-gradient(circle at center, #1a0033, #000000 70%);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ✨ AURA EXPANSIVA */
+body::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 400px;
+  height: 400px;
+
+  background: radial-gradient(circle, rgba(255,165,0,0.3), transparent 70%);
+  filter: blur(60px);
+
+  animation: expansion 6s infinite ease-in-out;
+}
+
+@keyframes expansion {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.3); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* CONTENIDO */
+.contenido {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 20px 80px;
+}
+
+/* 🪐 SIMBOLO */
+.simbolo {
+  font-size: 140px;
+  color: #ffa500;
+
+  animation: respirar 4s infinite ease-in-out;
+
+  text-shadow:
+    0 0 20px #ffa500,
+    0 0 40px #ff8c00,
+    0 0 80px #ff4500,
+    0 0 120px #ffa500;
+}
+
+/* 🌌 EFECTO RESPIRAR (expansión suave) */
+@keyframes respirar {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* TITULO */
+h1 {
+  font-size: 46px;
+  margin: 20px 0;
+}
+
+/* TEXTO */
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ffd9b3;
+}
+
+/* BOTON */
+.volver {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+
+  border: 1px solid #ffa500;
+  color: #ffa500;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #ffa500;
+  color: black;
+  box-shadow: 0 0 30px #ffa500;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+
+  .simbolo {
+    font-size: 90px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .contenido {
+    padding: 80px 15px 60px;
+  }
+}

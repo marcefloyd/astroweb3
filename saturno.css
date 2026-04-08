@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #ccc;
+  text-align: center;
+
+  /* ⛓️ fondo oscuro serio */
+  background: radial-gradient(circle at center, #111111, #000000 70%);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 🌫️ AURA PESADA */
+body::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 300px;
+  height: 300px;
+
+  background: radial-gradient(circle, rgba(150,150,150,0.15), transparent 70%);
+  filter: blur(70px);
+
+  animation: respirarLento 8s infinite ease-in-out;
+}
+
+@keyframes respirarLento {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* CONTENIDO */
+.contenido {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 20px 80px;
+}
+
+/* ⛓️ SIMBOLO */
+.simbolo {
+  font-size: 130px;
+  color: #aaa;
+
+  animation: peso 3s infinite ease-in-out;
+
+  text-shadow:
+    0 0 10px #888,
+    0 0 20px #555,
+    0 0 40px #333;
+}
+
+/* ⛓️ EFECTO PESO */
+@keyframes peso {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(8px); }
+  100% { transform: translateY(0); }
+}
+
+/* TITULO */
+h1 {
+  font-size: 46px;
+  margin: 20px 0;
+  color: #ddd;
+}
+
+/* TEXTO */
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #bbb;
+}
+
+/* BOTON */
+.volver {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+
+  border: 1px solid #888;
+  color: #aaa;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #aaa;
+  color: black;
+  box-shadow: 0 0 20px #888;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+
+  .simbolo {
+    font-size: 85px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .contenido {
+    padding: 80px 15px 60px;
+  }
+}

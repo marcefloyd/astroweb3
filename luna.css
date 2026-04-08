@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+
+  /* 🌌 fondo nocturno */
+  background: radial-gradient(circle at center, #0a0f2c, #000000 70%);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 🌫️ AURA SUAVE */
+body::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 280px;
+  height: 280px;
+
+  background: radial-gradient(circle, rgba(173,216,230,0.3), transparent 70%);
+  filter: blur(50px);
+
+  animation: auraLuna 6s infinite ease-in-out;
+}
+
+@keyframes auraLuna {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* CONTENIDO */
+.contenido {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 20px 80px;
+}
+
+/* 🌙 SIMBOLO */
+.simbolo {
+  font-size: 120px;
+  color: #cfd8ff;
+
+  animation: flotar 5s infinite ease-in-out;
+
+  text-shadow:
+    0 0 10px #cfd8ff,
+    0 0 20px #9bbcff,
+    0 0 40px #6a8dff,
+    0 0 80px #4a6cff;
+}
+
+/* 🌊 EFECTO FLOTAR */
+@keyframes flotar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* TITULO */
+h1 {
+  font-size: 44px;
+  margin: 20px 0;
+}
+
+/* TEXTO */
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #d0d8ff;
+}
+
+/* BOTON */
+.volver {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+
+  border: 1px solid #9bbcff;
+  color: #9bbcff;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #9bbcff;
+  color: black;
+  box-shadow: 0 0 25px #9bbcff;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+
+  .simbolo {
+    font-size: 80px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .contenido {
+    padding: 80px 15px 60px;
+  }
+}

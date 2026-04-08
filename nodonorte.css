@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #eaffff;
+  text-align: center;
+
+  background: radial-gradient(circle at center, #001a1a, #000000 70%);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ✨ ENERGÍA ASCENDENTE */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,255,200,0.05),
+    transparent
+  );
+
+  animation: subir 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes subir {
+  0% { transform: translateY(20px); opacity: 0.6; }
+  50% { transform: translateY(-20px); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0.6; }
+}
+
+/* CONTENIDO */
+.contenido {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 20px;
+}
+
+/* ☊ SIMBOLO */
+.simbolo {
+  font-size: 130px;
+  color: #00ffcc;
+
+  animation: crecer 3s infinite ease-in-out;
+
+  text-shadow:
+    0 0 10px #00ffcc,
+    0 0 20px #00ffcc,
+    0 0 40px #00ffaa;
+}
+
+@keyframes crecer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* TEXTO */
+h1 {
+  font-size: 46px;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* BOTON */
+.volver {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+
+  border: 1px solid #00ffcc;
+  color: #00ffcc;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #00ffcc;
+  color: black;
+  box-shadow: 0 0 25px #00ffcc;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .simbolo { font-size: 85px; }
+  h1 { font-size: 30px; }
+  p { font-size: 16px; }
+}

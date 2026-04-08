@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #d0e7ff;
+  text-align: center;
+
+  background: radial-gradient(circle at center, #001133, #000000 70%);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 🌊 EFECTO AGUA */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(circle, rgba(0,100,255,0.1), transparent 70%);
+  animation: flotar 6s infinite ease-in-out;
+
+  pointer-events: none;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* CONTENIDO */
+.contenido {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 20px 80px;
+}
+
+/* 🌊 SIMBOLO */
+.simbolo {
+  font-size: 130px;
+  color: #66ccff;
+
+  animation: onda 4s infinite ease-in-out;
+
+  text-shadow:
+    0 0 10px #66ccff,
+    0 0 20px #3399ff,
+    0 0 40px #0066ff;
+}
+
+@keyframes onda {
+  0% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.1) translateY(-10px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* TEXTO */
+h1 {
+  font-size: 46px;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* BOTON */
+.volver {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+
+  border: 1px solid #66ccff;
+  color: #66ccff;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #66ccff;
+  color: black;
+  box-shadow: 0 0 25px #66ccff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .simbolo { font-size: 85px; }
+  h1 { font-size: 30px; }
+  p { font-size: 16px; }
+}

@@ -4,10 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const canvas = document.getElementById("estrellas");
 
-  if (!canvas) {
-    console.warn("⚠️ No se encontró el canvas #estrellas");
-    return;
-  }
+  if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
 
@@ -72,10 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function animar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     dibujarEstrellas();
-    dibujarLineas(); // 🌌 constelaciones
-
+    dibujarLineas();
     requestAnimationFrame(animar);
   }
 
@@ -86,30 +81,30 @@ document.addEventListener("DOMContentLoaded", () => {
     crearEstrellas();
   });
 
-  // 📱 EFECTO TOUCH PARA CELULAR
+  // 🔥 CLICK + TRANSICIÓN (FIX REAL)
   document.querySelectorAll(".signo").forEach(signo => {
+
+    signo.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const link = signo.getAttribute("href");
+
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = link;
+      }, 600);
+    });
+
+    // 📱 TOUCH (SIN ROMPER TRANSFORM)
     signo.addEventListener("touchstart", () => {
-      signo.style.transform = "scale(1.3)";
-      signo.style.textShadow = "0 0 20px white";
+      signo.style.scale = "1.3"; // 👈 usamos scale moderno
     });
 
     signo.addEventListener("touchend", () => {
-      signo.style.transform = "scale(1)";
-      signo.style.textShadow = "none";
+      signo.style.scale = "1";
     });
+
   });
 
-});
-document.querySelectorAll(".signo").forEach(signo => {
-  signo.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const link = signo.getAttribute("href");
-
-    document.body.classList.add("fade-out");
-
-    setTimeout(() => {
-      window.location.href = link;
-    }, 600);
-  });
 });

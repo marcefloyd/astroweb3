@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #ddd;
+  text-align: center;
+
+  background: radial-gradient(circle at center, #0a0000, #000000 80%);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 🖤 VÓRTICE */
+body::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(circle, rgba(255,0,80,0.15), transparent 70%);
+  filter: blur(80px);
+
+  animation: pulsar 4s infinite;
+}
+
+@keyframes pulsar {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.contenido {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 20px;
+}
+
+/* SIMBOLO */
+.simbolo {
+  font-size: 130px;
+  color: #ff0055;
+
+  animation: latidoOscuro 2s infinite;
+
+  text-shadow:
+    0 0 10px #ff0055,
+    0 0 30px #ff0033,
+    0 0 60px #990022;
+}
+
+@keyframes latidoOscuro {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* TEXTO */
+h1 {
+  font-size: 46px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* BOTON */
+.volver {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+
+  border: 1px solid #ff0055;
+  color: #ff0055;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #ff0055;
+  color: black;
+  box-shadow: 0 0 25px #ff0055;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .simbolo { font-size: 85px; }
+  h1 { font-size: 30px; }
+  p { font-size: 16px; }
+}
