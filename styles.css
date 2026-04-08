@@ -21,7 +21,7 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -2; /* 🔥 FIX */
+  z-index: -2;
 }
 
 /* 🎥 VIDEO */
@@ -58,15 +58,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
-/* RUEDA */
+/* RUEDA 🔥 RESPONSIVE */
 .rueda {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: clamp(280px, 60vw, 500px);
+  height: clamp(280px, 60vw, 500px);
   animation: girar 40s linear infinite;
   z-index: 2;
 }
@@ -84,28 +82,26 @@ body {
   left: 50%;
 }
 
-/* SIGNO (CLICK FIX REAL) */
+/* SIGNO */
 .signo {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 40px;
+  font-size: clamp(22px, 4vw, 40px);
+
   color: white;
   text-decoration: none;
 
   position: absolute;
-  z-index: 20; /* 🔥 ENCIMA DE TODO */
+  z-index: 20;
   pointer-events: auto;
 
   transform: translate(-50%, -50%);
   transition: 0.3s;
-
-  background: none;
-  border: none;
 }
 
-/* ICONO (ARREGLADO) */
+/* ICONO */
 .icono {
   display: inline-block;
   pointer-events: none;
@@ -120,27 +116,21 @@ body {
 /* HOVER */
 .signo:hover .icono {
   transform: scale(1.4);
-
-  text-shadow:
-    0 0 10px white,
-    0 0 20px white,
-    0 0 40px #8a2be2,
-    0 0 80px #8a2be2;
 }
 
-/* POSICIONES SIGNOS */
-.aries       { transform: rotate(0deg)   translate(100px) rotate(0deg); }
-.tauro       { transform: rotate(30deg)  translate(100px) rotate(-30deg); }
-.geminis     { transform: rotate(60deg)  translate(100px) rotate(-60deg); }
-.cancer      { transform: rotate(90deg)  translate(100px) rotate(-90deg); }
-.leo         { transform: rotate(120deg) translate(100px) rotate(-120deg); }
-.virgo       { transform: rotate(150deg) translate(100px) rotate(-150deg); }
-.libra       { transform: rotate(180deg) translate(100px) rotate(-180deg); }
-.escorpio    { transform: rotate(210deg) translate(100px) rotate(-210deg); }
-.sagitario   { transform: rotate(240deg) translate(100px) rotate(-240deg); }
-.capricornio { transform: rotate(270deg) translate(100px) rotate(-270deg); }
-.acuario     { transform: rotate(300deg) translate(100px) rotate(-300deg); }
-.piscis      { transform: rotate(330deg) translate(100px); }
+/* 🔥 RADIO RESPONSIVE SIGNOS */
+.aries       { transform: rotate(0deg)   translate(clamp(90px, 22vw, 200px)) rotate(0deg); }
+.tauro       { transform: rotate(30deg)  translate(clamp(90px, 22vw, 200px)) rotate(-30deg); }
+.geminis     { transform: rotate(60deg)  translate(clamp(90px, 22vw, 200px)) rotate(-60deg); }
+.cancer      { transform: rotate(90deg)  translate(clamp(90px, 22vw, 200px)) rotate(-90deg); }
+.leo         { transform: rotate(120deg) translate(clamp(90px, 22vw, 200px)) rotate(-120deg); }
+.virgo       { transform: rotate(150deg) translate(clamp(90px, 22vw, 200px)) rotate(-150deg); }
+.libra       { transform: rotate(180deg) translate(clamp(90px, 22vw, 200px)) rotate(-180deg); }
+.escorpio    { transform: rotate(210deg) translate(clamp(90px, 22vw, 200px)) rotate(-210deg); }
+.sagitario   { transform: rotate(240deg) translate(clamp(90px, 22vw, 200px)) rotate(-240deg); }
+.capricornio { transform: rotate(270deg) translate(clamp(90px, 22vw, 200px)) rotate(-270deg); }
+.acuario     { transform: rotate(300deg) translate(clamp(90px, 22vw, 200px)) rotate(-300deg); }
+.piscis      { transform: rotate(330deg) translate(clamp(90px, 22vw, 200px)); }
 
 /* ANIMACIONES */
 @keyframes girar {
@@ -151,19 +141,19 @@ body {
 /* 🌌 PLANETAS */
 .rueda-planetas {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
 
   top: 50%;
   left: 50%;
 
-  transform: translate(-50%, -50%) scale(0.7);
+  transform: translate(-50%, -50%);
   animation: girarPlanetas 60s linear infinite;
 
-  z-index: 5; /* debajo de signos */
+  z-index: 5;
 }
 
-/* CONTENEDOR PLANETA */
+/* PLANETA */
 .planeta {
   position: absolute;
   top: 50%;
@@ -171,16 +161,15 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* ICONO PLANETA (CLAVE 🔥) */
+/* ICONO PLANETA */
 .icono-planeta {
   display: inline-block;
   pointer-events: none;
 
-  /* 👇 CONTRA ROTACIÓN */
- animation: girarPlanetas 60s linear infinite;
-animation: contraPlaneta 60s linear infinite;
+  font-size: clamp(14px, 2.5vw, 22px);
 
-  /* GLOW */
+  animation: contraPlaneta 60s linear infinite;
+
   text-shadow:
     0 0 5px currentColor,
     0 0 10px currentColor,
@@ -191,33 +180,26 @@ animation: contraPlaneta 60s linear infinite;
 /* HOVER */
 .planeta:hover .icono-planeta {
   transform: scale(1.5);
-
-  text-shadow:
-    0 0 10px white,
-    0 0 20px currentColor,
-    0 0 40px currentColor,
-    0 0 80px currentColor;
 }
 
+/* 🔥 RADIO RESPONSIVE PLANETAS */
+.sol      { transform: rotate(0deg)   translate(clamp(60px, 16vw, 200px)); }
+.luna     { transform: rotate(27deg)  translate(clamp(60px, 16vw, 200px)); }
+.mercurio { transform: rotate(54deg)  translate(clamp(60px, 16vw, 200px)); }
+.venus    { transform: rotate(81deg)  translate(clamp(60px, 16vw, 200px)); }
+.marte    { transform: rotate(108deg) translate(clamp(60px, 16vw, 200px)); }
+.jupiter  { transform: rotate(135deg) translate(clamp(60px, 16vw, 200px)); }
+.saturno  { transform: rotate(162deg) translate(clamp(60px, 16vw, 200px)); }
+.urano    { transform: rotate(189deg) translate(clamp(60px, 16vw, 200px)); }
+.neptuno  { transform: rotate(216deg) translate(clamp(60px, 16vw, 200px)); }
+.pluton   { transform: rotate(243deg) translate(clamp(60px, 16vw, 200px)); }
+.quiron   { transform: rotate(270deg) translate(clamp(60px, 16vw, 200px)); }
+.nodo     { transform: rotate(297deg) translate(clamp(60px, 16vw, 200px)); }
+.lilith   { transform: rotate(324deg) translate(clamp(60px, 16vw, 200px)); }
 
-/* POSICIONES PLANETAS */
-.sol      { transform: rotate(0deg)    translate(200px); }
-.luna     { transform: rotate(27deg)   translate(200px); }
-.mercurio { transform: rotate(54deg)   translate(200px); }
-.venus    { transform: rotate(81deg)   translate(200px); }
-.marte    { transform: rotate(108deg)  translate(200px); }
-.jupiter  { transform: rotate(135deg)  translate(200px); }
-.saturno  { transform: rotate(162deg)  translate(200px); }
-.urano    { transform: rotate(189deg)  translate(200px); }
-.neptuno  { transform: rotate(216deg)  translate(200px); }
-.pluton   { transform: rotate(243deg)  translate(200px); }
-.quiron   { transform: rotate(270deg)  translate(200px); }
-.nodo     { transform: rotate(297deg)  translate(200px); }
-.lilith   { transform: rotate(324deg)  translate(200px); }
-
-/* COLORES PLANETAS */
-.sol .icono-planeta      { color: #FFD700; } /* dorado */
-.luna .icono-planeta     { color: #C0C0C0; } /* plateado */
+/* COLORES */
+.sol .icono-planeta      { color: #FFD700; }
+.luna .icono-planeta     { color: #C0C0C0; }
 .mercurio .icono-planeta { color: #a9a9a9; }
 .venus .icono-planeta    { color: #ff69b4; }
 .marte .icono-planeta    { color: #ff4500; }
@@ -230,23 +212,38 @@ animation: contraPlaneta 60s linear infinite;
 .nodo .icono-planeta     { color: #00ffcc; }
 .lilith .icono-planeta   { color: #ff1493; }
 
-.icono-planeta {
-  display: inline-block;
-  animation: contraPlaneta 60s linear infinite;
-}
-
-/* ANIMACIÓN DE LA RUEDA */
+/* ANIMACIONES PLANETAS */
 @keyframes girarPlanetas {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to   { transform: translate(-50%, -50%) rotate(-360deg); }
 }
 
-/* 🔥 CONTRA ROTACIÓN (UNA SOLA VEZ) */
 @keyframes contraPlaneta {
-  from {
-    transform: rotate(0deg);
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar h1 {
+    font-size: 20px;
   }
+
+  .navbar nav {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .contenedor {
+    margin-top: 100px;
+  }
+
 }
