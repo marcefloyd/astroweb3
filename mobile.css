@@ -1,0 +1,25 @@
+/* ========================= */
+/* 📱 MOBILE.CSS */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .icono-planeta {
+    font-size: clamp(40px, 10vw, 50px);
+  }
+
+  .sol      { transform: translate(-50%, -50%) rotate(0deg)   translate(clamp(100px, 20vw, 220px)) rotate(0deg); }
+  .luna     { transform: translate(-50%, -50%) rotate(27deg)  translate(clamp(100px, 20vw, 220px)) rotate(-27deg); }
+  .mercurio { transform: translate(-50%, -50%) rotate(54deg)  translate(clamp(100px, 20vw, 220px)) rotate(-54deg); }
+  .venus    { transform: translate(-50%, -50%) rotate(81deg)  translate(clamp(100px, 20vw, 220px)) rotate(-81deg); }
+  .marte    { transform: translate(-50%, -50%) rotate(108deg) translate(clamp(100px, 20vw, 220px)) rotate(-108deg); }
+  .jupiter  { transform: translate(-50%, -50%) rotate(135deg) translate(clamp(100px, 20vw, 220px)) rotate(-135deg); }
+  .saturno  { transform: translate(-50%, -50%) rotate(162deg) translate(clamp(100px, 20vw, 220px)) rotate(-162deg); }
+  .urano    { transform: translate(-50%, -50%) rotate(189deg) translate(clamp(100px, 20vw, 220px)) rotate(-189deg); }
+  .neptuno  { transform: translate(-50%, -50%) rotate(216deg) translate(clamp(100px, 20vw, 220px)) rotate(-216deg); }
+  .pluton   { transform: translate(-50%, -50%) rotate(243deg) translate(clamp(100px, 20vw, 220px)) rotate(-243deg); }
+  .quiron   { transform: translate(-50%, -50%) rotate(270deg) translate(clamp(100px, 20vw, 220px)) rotate(-270deg); }
+  .nodo     { transform: translate(-50%, -50%) rotate(297deg) translate(clamp(100px, 20vw, 220px)) rotate(-297deg); }
+  .lilith   { transform: translate(-50%, -50%) rotate(324deg) translate(clamp(100px, 20vw, 220px)) rotate(-324deg); }
+
+}

@@ -125,6 +125,25 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 0 30px rgba(0, 102, 255, 0.4);
 }
+/* =========================
+   SECCIONES GENERALES
+   (contenido de los signos)
+========================= */
+
+.seccion {
+    margin-top: 30px;
+}
+
+.seccion h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.frase {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+}
 
 /* 📱 RESPONSIVE */
 @media (max-width: 768px) {
@@ -197,4 +216,15 @@
   color: white;
   text-decoration: none;
   z-index: 20;
+}
+
+
+#fondo-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
