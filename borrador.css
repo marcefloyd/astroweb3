@@ -240,7 +240,8 @@ body {
   transform:
     translate(-50%, -50%)
     rotate(330deg)
-    translate(clamp(90px, 22vw, 200px));
+    translate(clamp(90px, 22vw, 200px))
+    rotate(-330deg);;
 }
 
 /* ANIMACIÓN */
@@ -276,7 +277,10 @@ body {
   display: inline-block;
   pointer-events: none;
 
-  font-size: clamp(14px, 3vw, 22px);
+  font-size: clamp(14px, 3vw, 22px)
+  .icono-planeta {
+  animation: contraPlaneta 60s linear infinite;
+};
 
   
 
@@ -311,91 +315,104 @@ body {
   transform:
     translate(-50%, -50%)
     rotate(0deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(0deg);
 }
 
 .luna {
   transform:
     translate(-50%, -50%)
     rotate(27deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-27deg);
 }
 
 .mercurio {
   transform:
     translate(-50%, -50%)
     rotate(54deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-54deg);
 }
 
 .venus {
   transform:
     translate(-50%, -50%)
     rotate(81deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-81deg);
 }
 
 .marte {
   transform:
     translate(-50%, -50%)
     rotate(108deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-108deg);
 }
 
 .jupiter {
   transform:
     translate(-50%, -50%)
     rotate(135deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-135deg);
 }
 
 .saturno {
   transform:
     translate(-50%, -50%)
     rotate(162deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-162deg);
 }
 
 .urano {
   transform:
     translate(-50%, -50%)
     rotate(189deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-189deg);
 }
 
 .neptuno {
   transform:
     translate(-50%, -50%)
     rotate(216deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-216deg);
 }
 
 .pluton {
   transform:
     translate(-50%, -50%)
     rotate(243deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-243deg);
 }
 
 .quiron {
   transform:
     translate(-50%, -50%)
     rotate(270deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-270deg);
 }
 
 .nodo {
   transform:
     translate(-50%, -50%)
     rotate(297deg)
-    translate(clamp(40px,10vw, 120px));
+    translate(clamp(40px,10vw, 120px))
+    rotate(-297deg);
 }
 
 .lilith {
   transform:
     translate(-50%, -50%)
     rotate(328deg)
-    translate(clamp(40px, 10vw, 120px));
+    translate(clamp(40px, 10vw, 120px))
+    rotate(-328deg);
 }
 
 /* COLORES */
