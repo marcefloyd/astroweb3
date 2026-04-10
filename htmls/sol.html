@@ -1,50 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Sol ☉</title>
 
- <link rel="stylesheet" href="../css/sol.css">
-
-  
+  <link rel="stylesheet" href="../css/sol.css">
 </head>
 
 <body>
 
-  <div class="contenido">
+  <div class="slider">
 
-    <div class="simbolo">☉</div>
+    <!-- 🔥 SLIDES -->
+    <div class="slides">
 
-    <h1>El Sol</h1>
+      <!-- 🌞 SLIDE 1 -->
+      <section class="slide active">
+        <div class="contenido">
+          <div class="simbolo">☉</div>
 
-    <p>
-      El Sol representa el núcleo de tu identidad, tu esencia más pura y la fuerza vital que te impulsa a existir.
-      Es el centro de tu carta astral, el punto desde donde todo irradia.
-    </p>
+          <h1>El Sol</h1>
 
-    <p>
-      En astrología, el Sol simboliza la conciencia, el ego, la voluntad y la energía creadora.
-      Habla de quién sos cuando brillás sin miedo, cuando te mostrás al mundo tal como sos.
-    </p>
+          <p>El Sol representa el núcleo de tu identidad, tu esencia más pura y la fuerza vital que te impulsa a existir.</p>
 
-    <p>
-      Es tu propósito, tu camino de realización personal, aquello que viniste a desarrollar a lo largo de tu vida.
-      No es solo tu signo… es tu fuego interno.
-    </p>
+          <p>En astrología, simboliza la conciencia, el ego y la voluntad. Es quién sos cuando brillás sin miedo.</p>
 
-    <p>
-      Cuando el Sol está fuerte, hay claridad, seguridad y presencia.
-      Cuando está bloqueado, aparecen dudas, inseguridad o falta de dirección.
-    </p>
+          <p>Es tu propósito, tu camino de realización personal. No es solo tu signo… es tu fuego interno.</p>
 
-    <p>
-      Conectar con tu Sol es conectar con tu poder.
-    </p>
+          <p>Cuando el Sol está fuerte, hay claridad. Cuando está bloqueado, aparecen dudas.</p>
 
+          <p><b>Conectar con tu Sol es conectar con tu poder.</b></p>
+        </div>
+      </section>
+
+      <!-- 🏠 SLIDE 2 -->
+      <section class="slide">
+        <div class="contenido">
+          <h1>☀️ El Sol en las Casas</h1>
+
+          <p><b>Casa 1:</b> personalidad fuerte, presencia magnética.</p>
+          <p><b>Casa 2:</b> identidad ligada al valor personal y dinero.</p>
+          <p><b>Casa 3:</b> mente brillante, comunicación protagonista.</p>
+          <p><b>Casa 4:</b> identidad emocional y familiar.</p>
+          <p><b>Casa 5:</b> creatividad, brillo, expresión artística.</p>
+          <p><b>Casa 6:</b> trabajo, rutina, servicio.</p>
+          <p><b>Casa 7:</b> identidad en pareja.</p>
+          <p><b>Casa 8:</b> transformación profunda.</p>
+          <p><b>Casa 9:</b> filosofía, viajes, expansión.</p>
+          <p><b>Casa 10:</b> éxito, carrera, reconocimiento.</p>
+          <p><b>Casa 11:</b> grupos, amistades, visión futura.</p>
+          <p><b>Casa 12:</b> mundo interno, espiritualidad.</p>
+        </div>
+      </section>
+
+      <!-- ✨ SLIDE 3 -->
+      <section class="slide">
+        <div class="contenido">
+          <h1>✨ Aspectos Positivos</h1>
+
+          <p><b>Sol + Luna:</b> equilibrio interno, coherencia emocional.</p>
+          <p><b>Sol + Mercurio:</b> mente clara, inteligencia expresiva.</p>
+          <p><b>Sol + Venus:</b> encanto, magnetismo, amor propio.</p>
+          <p><b>Sol + Marte:</b> energía, acción, liderazgo.</p>
+          <p><b>Sol + Júpiter:</b> expansión, optimismo, suerte.</p>
+          <p><b>Sol + Saturno:</b> disciplina, estructura, éxito a largo plazo.</p>
+          <p><b>Sol + Urano:</b> originalidad, innovación.</p>
+          <p><b>Sol + Neptuno:</b> intuición, sensibilidad espiritual.</p>
+        </div>
+      </section>
+
+      <!-- ⚡ SLIDE 4 -->
+      <section class="slide">
+        <div class="contenido">
+          <h1>⚡ Aspectos Desafiantes</h1>
+
+          <p><b>Sol - Luna:</b> conflicto interno.</p>
+          <p><b>Sol - Mercurio:</b> confusión mental.</p>
+          <p><b>Sol - Venus:</b> dependencia afectiva.</p>
+          <p><b>Sol - Marte:</b> impulsividad, enojo.</p>
+          <p><b>Sol - Júpiter:</b> exceso de ego.</p>
+          <p><b>Sol - Saturno:</b> bloqueos, inseguridad.</p>
+          <p><b>Sol - Urano:</b> rebeldía extrema.</p>
+          <p><b>Sol - Neptuno:</b> ilusiones, pérdida de identidad.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 🔥 CONTROLES -->
+    <div class="controles">
+      <button id="prev">⬅</button>
+      <button id="next">➡</button>
+    </div>
+
+    <!-- 🔙 VOLVER -->
     <a href="../index.html" class="volver">⬅ Volver</a>
 
   </div>
+
+  <!-- JS -->
+  <script src="../sol.js"></script>
 
 </body>
 </html>
