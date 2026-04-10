@@ -4,16 +4,13 @@ body {
   color: white;
   text-align: center;
 
-  /* ⚡ fondo eléctrico */
   background: radial-gradient(circle at center, #1a1a1a, #000000 70%);
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
-/* ⚡ EFECTO ENERGÍA (líneas tipo impulso) */
+/* ⚡ EFECTO ENERGÍA */
 body::before {
   content: "";
-  position: absolute;
+  position: fixed; /* 🔥 clave para que no rompa scroll */
   width: 200%;
   height: 200%;
   top: -50%;
@@ -28,11 +25,50 @@ body::before {
   );
 
   animation: energia 8s linear infinite;
+  z-index: 0;
 }
 
 @keyframes energia {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+/* 🔥 SLIDER */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* SLIDES */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease;
+
+  /* 🔥 SOLUCIÓN */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.slide::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slide::-webkit-scrollbar-thumb {
+  background: #00ffff; /* ⚡ Mercurio */
+  border-radius: 10px;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* CONTENIDO */
@@ -42,7 +78,7 @@ body::before {
 
   max-width: 800px;
   margin: auto;
-  padding: 100px 20px 80px;
+  padding: 100px 20px 120px;
 }
 
 /* ⚡ SIMBOLO */
@@ -59,7 +95,7 @@ body::before {
     0 0 80px #00ffff;
 }
 
-/* ⚡ EFECTO VIBRACIÓN */
+/* ⚡ VIBRACIÓN */
 @keyframes vibrar {
   from { transform: translateX(-2px); }
   to   { transform: translateX(2px); }
@@ -78,10 +114,13 @@ p {
   color: #cceeff;
 }
 
-/* BOTON */
+/* 🔙 BOTON VOLVER */
 .volver {
-  display: inline-block;
-  margin-top: 40px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
   padding: 12px 25px;
 
   border: 1px solid #00ffff;
@@ -89,16 +128,66 @@ p {
   text-decoration: none;
 
   transition: 0.3s;
+  z-index: 1000;
+}
+.volver:hover {
+  background: #9bbcff;
+  color: black;
+  box-shadow: 0 0 25px #9bbcff;
 }
 
-.volver:hover {
+/* 🔥 FLECHAS */
+.controles button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: transparent;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+/* IZQ / DER */
+#prev { left: 20px; }
+#next { right: 20px; }
+
+/* HOVER */
+.controles button:hover {
   background: #00ffff;
   color: black;
   box-shadow: 0 0 25px #00ffff;
+  transform: translateY(-50%) scale(1.1);
 }
 
-/* 📱 RESPONSIVE */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
+  body {
+    overflow-y: auto;
+  }
+
+  .slider {
+    height: auto;
+  }
+
+  .slide {
+    position: relative;
+    opacity: 1;
+    transform: none;
+  }
+
+  .contenido {
+    height: auto;
+    overflow: visible;
+    padding: 80px 15px 100px;
+  }
 
   .simbolo {
     font-size: 80px;
@@ -112,7 +201,8 @@ p {
     font-size: 16px;
   }
 
-  .contenido {
-    padding: 80px 15px 60px;
+  /* 🚫 SACAMOS FLECHAS EN CELU */
+  .controles {
+    display: none;
   }
-}  
+}

@@ -1,19 +1,17 @@
+/* 💖 FONDO */
 body {
   margin: 0;
   font-family: sans-serif;
   color: white;
   text-align: center;
 
-  /* 💖 fondo rosado suave */
   background: radial-gradient(circle at center, #2a001a, #000000 70%);
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
-/* ✨ AURA SUAVE ROMÁNTICA */
+/* ✨ AURA VENUS */
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -25,12 +23,51 @@ body::before {
   filter: blur(60px);
 
   animation: auraVenus 6s infinite ease-in-out;
+  z-index: 0;
 }
 
 @keyframes auraVenus {
   0% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -50%) scale(1.15); }
   100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* 🔥 SLIDER */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease;
+
+  /* 🔥 SOLUCIÓN */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.slide::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slide::-webkit-scrollbar-thumb {
+  background: #00ffff; /* ⚡ Mercurio */
+  border-radius: 10px;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* CONTENIDO */
@@ -40,7 +77,7 @@ body::before {
 
   max-width: 800px;
   margin: auto;
-  padding: 100px 20px 80px;
+  padding: 100px 20px 120px;
 }
 
 /* 💖 SIMBOLO */
@@ -57,7 +94,7 @@ body::before {
     0 0 100px #ff69b4;
 }
 
-/* 🌸 EFECTO SUAVE */
+/* 🌸 FLOTAR */
 @keyframes flotar {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-12px); }
@@ -77,10 +114,13 @@ p {
   color: #ffd1e6;
 }
 
-/* BOTON */
+/* 🔙 BOTON FIJO */
 .volver {
-  display: inline-block;
-  margin-top: 40px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
   padding: 12px 25px;
 
   border: 1px solid #ff69b4;
@@ -88,6 +128,7 @@ p {
   text-decoration: none;
 
   transition: 0.3s;
+  z-index: 1000;
 }
 
 .volver:hover {
@@ -96,8 +137,54 @@ p {
   box-shadow: 0 0 25px #ff69b4;
 }
 
-/* 📱 RESPONSIVE */
+/* 🔥 FLECHAS */
+.controles button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: transparent;
+  border: 1px solid #ff69b4;
+  color: #ff69b4;
+
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+#prev { left: 20px; }
+#next { right: 20px; }
+
+.controles button:hover {
+  background: #ff69b4;
+  color: black;
+  box-shadow: 0 0 25px #ff69b4;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
+  body {
+    overflow-y: auto;
+  }
+
+  .slider {
+    height: auto;
+  }
+
+  .slide {
+    position: relative;
+    opacity: 1;
+    transform: none;
+  }
+
+  .contenido {
+    padding: 80px 15px 100px;
+  }
 
   .simbolo {
     font-size: 85px;
@@ -111,7 +198,8 @@ p {
     font-size: 16px;
   }
 
-  .contenido {
-    padding: 80px 15px 60px;
+  /* 🚫 sin flechas */
+  .controles {
+    display: none;
   }
 }
