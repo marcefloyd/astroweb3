@@ -303,6 +303,8 @@ body {
 
 /* 🔥 MENÚ */
 .menu {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   right: -100%;
@@ -316,6 +318,18 @@ body {
   z-index: 99;
 
   padding: 80px 20px;
+
+  /* 🔥 CLAVE */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  .menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background: #ffd79b;
+  border-radius: 10px;
+} /* Firefox */
 }
 
 /* ACTIVO */
@@ -328,6 +342,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  min-height: 100%;
 }
 
 .menu h3 {
@@ -370,6 +386,12 @@ body {
   .seccion-rueda {
     transform: scale(1.2);
   }
+  @media (max-width: 600px) {
+  .menu {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
   /* 🔥 CENTRADO PERFECTO */
   .rueda-planetas {
@@ -396,4 +418,34 @@ body {
     justify-content: center;
   }
 }
+.menu::-webkit-scrollbar {
+  width: 6px;
+}
 
+.menu::-webkit-scrollbar-thumb {
+  background: #ffd79b;
+  border-radius: 10px;
+}
+.menu-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu h3 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #ffd79b;
+}
+
+.menu a {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: white;
+  text-shadow: 0 0 10px white;
+}
