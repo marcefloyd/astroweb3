@@ -9,6 +9,8 @@ html, body {
   color: white;
   text-align: center;
   background: radial-gradient(circle at center, #2a0000, #000000 70%);
+
+  scroll-behavior: smooth;
 }
 
 /* 🔥 FONDO */
@@ -46,7 +48,7 @@ body::before {
   transition: transform 0.5s ease;
 }
 
-/* SLIDE */
+/* ✅ NO TOCAMOS ESTO */
 .slide {
   width: 100vw;
   height: 100vh;
@@ -64,12 +66,16 @@ body::before {
   opacity: 1;
 }
 
-/* CONTENIDO */
+/* 🔥 SOLO AJUSTAMOS ESTO */
 .contenido {
   max-width: 800px;
-  padding: 40px 20px;
+  width: 90%;
+  padding: 20px 20px 40px;
+
   position: relative;
   z-index: 2;
+
+  transform: translateY(-40px); /* 🔥 SUBE TODO */
 }
 
 /* 🖼️ IMAGEN */
@@ -78,33 +84,21 @@ body::before {
   height: 200px;
   margin-bottom: 20px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
   background-size: cover;
   background-position: center;
 
-  box-shadow: 0 0 20px rgba(255,0,0,0.3);
+  box-shadow: 0 0 25px rgba(255,0,0,0.4);
 
-  /* fallback si no cargan imágenes */
   background-image: linear-gradient(135deg, #300000, #ff0000);
 }
 
-/* IMÁGENES POR SLIDE */
-.slide:nth-child(1) .imagen {
-  background-image: url("../img/aries1.jpg");
-}
-
-.slide:nth-child(2) .imagen {
-  background-image: url("../img/aries2.jpg");
-}
-
-.slide:nth-child(3) .imagen {
-  background-image: url("../img/aries3.jpg");
-}
-
-.slide:nth-child(4) .imagen {
-  background-image: url("../img/aries4.jpg");
-}
+/* IMÁGENES */
+.slide:nth-child(1) .imagen { background-image: url("../img/aries1.jpg"); }
+.slide:nth-child(2) .imagen { background-image: url("../img/aries2.jpg"); }
+.slide:nth-child(3) .imagen { background-image: url("../img/aries3.jpg"); }
+.slide:nth-child(4) .imagen { background-image: url("../img/aries4.jpg"); }
 
 /* SIMBOLO */
 .simbolo {
@@ -134,28 +128,45 @@ p {
   font-size: 18px;
   line-height: 1.7;
   color: #ffcccc;
+  margin-bottom: 18px;
 }
 
-/* BOTONES */
+/* 🔥 CONTROLES */
 .controles {
   position: fixed;
-  bottom: 20px;
+  bottom: 25px;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   z-index: 10;
 }
 
 .controles button {
-  background: transparent;
+  background: rgba(0,0,0,0.6);
   border: 1px solid #ff2a2a;
   color: #ff2a2a;
-  padding: 10px 20px;
+
+  padding: 12px 22px;
+  font-size: 18px;
+
+  border-radius: 8px;
   cursor: pointer;
+
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
 }
 
-/* VOLVER */
+.controles button:hover {
+  background: #ff2a2a;
+  color: black;
+
+  box-shadow:
+    0 0 10px #ff0000,
+    0 0 25px #ff0000;
+}
+
+/* 🔙 VOLVER */
 .volver {
   position: fixed;
   top: 20px;
@@ -165,6 +176,15 @@ p {
   padding: 10px 20px;
   color: #ff2a2a;
   text-decoration: none;
+
+  background: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #ff2a2a;
+  color: black;
 }
 
 /* 📱 MOBILE */
@@ -180,7 +200,12 @@ p {
   }
 
   .contenido {
-    padding: 60px 15px;
+    transform: translateY(-20px); /* 🔥 más suave en celu */
+    padding: 20px 15px;
+  }
+
+  .imagen {
+    height: 160px;
   }
 
   .simbolo {
@@ -195,8 +220,16 @@ p {
     font-size: 15px;
   }
 
+  .controles {
+    bottom: 15px;
+    gap: 15px;
+  }
+
   .controles button {
-    padding: 8px 16px;
+    padding: 10px 16px;
     font-size: 16px;
   }
 }
+
+
+

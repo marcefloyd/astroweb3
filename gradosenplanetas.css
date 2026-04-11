@@ -72,7 +72,7 @@ body {
   position: fixed;
   inset: 0;
   object-fit: cover;
-  z-index: -3;
+  z-index: -1;
 }
 
 /* 🔥 CONTENEDOR */
@@ -94,12 +94,22 @@ body {
   align-items: center;
 }
 
-/* 🔥 CONTENIDO FUTURO */
+/* 🔥 grados de los signos  */
 .seccion-contenido {
+    position: relative; 
+  top: 0;
+  left: 0;
+
   width: 100%;
-  max-width: 1000px;
-  padding: 80px 20px;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
+
+  z-index: 5;
 }
 
 /* 🔥 RUEDAS */
@@ -316,6 +326,9 @@ body {
   z-index: 99;
 
   padding: 80px 20px;
+
+  /* 🔥 CLAVE */
+  overflow-y: auto;
 }
 
 /* ACTIVO */
@@ -396,4 +409,85 @@ body {
     justify-content: center;
   }
 }
+/* 🔥 CTA CENTRADO PRO */
+.seccion-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.cta-grado {
+  max-width: 500px;
+}
+
+/* TITULO */
+.cta-grado h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+
+  color: #ffd79b;
+
+  text-shadow:
+    0 0 10px #ffd79b,
+    0 0 20px #ffae00;
+}
+
+/* TEXTO */
+.cta-grado p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+/* BOTÓN */
+.btn-grado {
+  display: inline-block;
+  padding: 15px 30px;
+
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+
+  border-radius: 30px;
+
+  background: linear-gradient(45deg, #ff0000, #ff7300);
+
+  box-shadow:
+    0 0 10px #ff0000,
+    0 0 25px #ff0000;
+
+  transition: 0.3s;
+
+  animation: latido 1.5s infinite;
+}
+
+/* HOVER */
+.btn-grado:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 0 20px #ff0000,
+    0 0 40px #ff0000;
+}
+
+/* ANIMACIÓN */
+@keyframes latido {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .cta-grado h2 {
+    font-size: 24px;
+  }
+
+  .btn-grado {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+}
+
 
