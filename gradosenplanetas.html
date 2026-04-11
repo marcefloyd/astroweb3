@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rueda Zodiacal</title>
+
+  <link rel="icon" href="assets/zodiaco.png">
+
+  <link rel="stylesheet" href="gradosenplanetas.css">
+  <link rel="stylesheet" href="elementos.css">
+</head>
+
+<body>
+
+  <!-- 🌌 CANVAS -->
+  <canvas id="estrellas"></canvas>
+
+  <!-- 🎥 VIDEO -->
+  <video autoplay muted loop id="fondo-video">
+    <source src="assets/sky.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🔝 NAVBAR -->
+  <header class="navbar">
+    <h1 class="logo">VIBRANDO ACUARIO</h1>
+
+    <div class="menu-toggle" id="menu-toggle">
+  ☰
+</div>
+
+<nav class="menu" id="menu">
+  <div class="menu-contenido">
+
+    <h3>Signos</h3>
+    <a href="aries.html">Aries</a>
+    <a href="tauro.html">Tauro</a>
+    <a href="geminis.html">Géminis</a>
+    <a href="cancer.html">Cáncer</a>
+    <a href="leo.html">Leo</a>
+    <a href="virgo.html">Virgo</a>
+    <a href="libra.html">Libra</a>
+    <a href="escorpio.html">Escorpio</a>
+    <a href="sagitario.html">Sagitario</a>
+    <a href="capricornio.html">Capricornio</a>
+    <a href="acuario.html">Acuario</a>
+    <a href="piscis.html">Piscis</a>
+
+    <h3>Planetas</h3>
+    <a href="htmls/sol.html">Sol</a>
+    <a href="htmls/luna.html">Luna</a>
+    <a href="mercurio.html">Mercurio</a>
+    <a href="htmls/venus.html">Venus</a>
+    <a href="htmls/marte.html">Marte</a>
+    <a href="jupiter.html">Júpiter</a>
+    <a href="htmls/saturno.html">Saturno</a>
+    <a href="htmls/urano.html">Urano</a>
+    <a href="htmls/neptuno.html">Neptuno</a>
+    <a href="htmls/pluton.html">Plutón</a>
+
+  </div>
+</nav>
+  </header>
+
+  <!-- 🔥 CONTENEDOR PRINCIPAL -->
+  <div class="contenedor">
+
+    <!-- 🌌 SECCIÓN RUEDA -->
+    <section class="seccion-rueda">
+
+      <!-- SIGNOS -->
+      <div class="rueda-signos">
+
+        <div class="item aries"><a href="aries.html" class="signo"><span class="icono">♈︎</span></a></div>
+        <div class="item tauro"><a href="tauro.html" class="signo"><span class="icono">♉︎</span></a></div>
+        <div class="item geminis"><a href="geminis.html" class="signo"><span class="icono">♊︎</span></a></div>
+        <div class="item cancer"><a href="cancer.html" class="signo"><span class="icono">♋︎</span></a></div>
+        <div class="item leo"><a href="leo.html" class="signo"><span class="icono">♌︎</span></a></div>
+        <div class="item virgo"><a href="virgo.html" class="signo"><span class="icono">♍︎</span></a></div>
+        <div class="item libra"><a href="libra.html" class="signo"><span class="icono">♎︎ </span></a></div>
+        <div class="item escorpio"><a href="escorpio.html" class="signo"><span class="icono">♏︎</span></a></div>
+        <div class="item sagitario"><a href="sagitario.html" class="signo"><span class="icono">♐︎</span></a></div>
+        <div class="item capricornio"><a href="capricornio.html" class="signo"><span class="icono">♑︎</span></a></div>
+        <div class="item acuario"><a href="acuario.html" class="signo"><span class="icono">♒︎</span></a></div>
+        <div class="item piscis"><a href="piscis.html" class="signo"><span class="icono">♓︎</span></a></div>
+
+      </div>
+
+      <!-- PLANETAS -->
+      <div class="rueda-planetas">
+
+        <a href="htmls/sol.html" class="planeta sol"><span class="icono-planeta">☉</span></a>
+        <a href="htmls/luna.html" class="planeta luna"><span class="icono-planeta">☽</span></a>
+        <a href="mercurio.html" class="planeta mercurio"><span class="icono-planeta">☿</span></a>
+        <a href="htmls/venus.html" class="planeta venus"><span class="icono-planeta">♀</span></a>
+        <a href="htmls/marte.html" class="planeta marte"><span class="icono-planeta">♂</span></a>
+        <a href="jupiter.html" class="planeta jupiter"><span class="icono-planeta">♃</span></a>
+        <a href="htmls/saturno.html" class="planeta saturno"><span class="icono-planeta">♄</span></a>
+        <a href="htmls/urano.html" class="planeta urano"><span class="icono-planeta">♅</span></a>
+        <a href="htmls/neptuno.html" class="planeta neptuno"><span class="icono-planeta">♆</span></a>
+        <a href="htmls/pluton.html" class="planeta pluton"><span class="icono-planeta">♇</span></a>
+        <a href="htmls/quiron.html" class="planeta quiron"><span class="icono-planeta">⚷</span></a>
+        <a href="htmls/nodonorte.html" class="planeta nodo"><span class="icono-planeta">☊</span></a>
+        <a href="htmls/lilith.html" class="planeta lilith"><span class="icono-planeta">⚸</span></a>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- 🔥 CONTENIDO FUTURO -->
+  <section class="seccion-contenido">
+    <h2>Contenido futuro</h2>
+    <p>Acá vas a meter interpretación, grados, cartas, etc.</p>
+  </section>
+
+  <!-- 🔥 FOOTER -->
+  <footer class="footer">
+    <div class="footer-contenido">
+
+      <h2 class="footer-logo">Vibrando Acuario</h2>
+
+      <p class="footer-texto">
+        Explorando los grados del zodiaco y el lenguaje simbólico del cosmos.
+      </p>
+
+      <div class="footer-links">
+        <a href="#">Inicio</a>
+        <a href="#">Horóscopo</a>
+        <a href="#">Contacto</a>
+      </div>
+
+      <p class="footer-copy">
+        © 2026 Vibrando Acuario
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

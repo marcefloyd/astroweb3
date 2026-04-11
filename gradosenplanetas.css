@@ -1,0 +1,344 @@
+:root {
+  --planeta-pc: clamp(60px, 20vw, 60px);
+  --planeta-mobile: clamp(28px, 8vw, 45px);
+  --velocidad: 60s;
+
+  /* 🔥 CLAVE: tamaños base (PC) */
+  --radio-signos: clamp(135px, 30vw, 260px);
+  --radio-planetas: clamp(70px, 20vw, 180px);
+}
+
+/* 🔥 RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* 🔥 BODY */
+body {
+  font-family: sans-serif;
+  color: white;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔥 NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  z-index: 50;
+}
+
+/* 🔥 LOGO */
+.logo {
+  font-size: 50px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffd79b, #eeff00, #ffdea0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🔥 FONDOS */
+#estrellas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+#fondo-video {
+  position: fixed;
+  inset: 0;
+  object-fit: cover;
+  z-index: -3;
+}
+
+/* 🔥 CONTENEDOR */
+.contenedor {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔥 SECCIÓN RUEDA */
+.seccion-rueda {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 CONTENIDO FUTURO */
+.seccion-contenido {
+  width: 100%;
+  max-width: 1000px;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* 🔥 RUEDAS */
+.rueda-signos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: girar 40s linear infinite;
+}
+
+.rueda-planetas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: girarPlanetas var(--velocidad) linear infinite reverse;
+  z-index: 5;
+}
+
+/* INTERACCIONES */
+.rueda-planetas { pointer-events: none; }
+.signo { pointer-events: auto; }
+.planeta { pointer-events: auto; }
+
+/* CENTRO */
+.item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* SIGNOS */
+.signo {
+    color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(35px, 9vw, 70px);
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+.aries .icono { color: #ff0000; }
+.tauro .icono { color: #6cc34a; }
+.geminis .icono { color: #dfcd6a; }
+.cancer .icono { color: #00bfff; }
+.leo .icono { color: #ff0000; }
+.virgo .icono { color: #6cc34a; }
+.libra .icono { color: #dfcd6a; }
+.escorpio .icono { color: #00bfff; }
+.sagitario .icono { color: #ff0000; }
+.capricornio .icono { color: #6cc34a; }
+.acuario .icono { color: #dfcd6a; }
+.piscis .icono { color: #00bfff; }
+
+.icono {
+  display: inline-block;
+  pointer-events: none;
+
+  animation: contraGiro 40s linear infinite;
+  font-family: "Segoe UI Symbol", "Noto Sans Symbols", "Arial Unicode MS", sans-serif;
+
+
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+.signo:hover .icono {
+  transform: scale(1.3);
+}
+
+/* 🔥 POSICIONES SIGNOS */
+.aries { transform: translate(-50%, -50%) rotate(0deg) translate(var(--radio-signos)) rotate(0deg); }
+.tauro { transform: translate(-50%, -50%) rotate(30deg) translate(var(--radio-signos)) rotate(-30deg); }
+.geminis { transform: translate(-50%, -50%) rotate(60deg) translate(var(--radio-signos)) rotate(-60deg); }
+.cancer { transform: translate(-50%, -50%) rotate(90deg) translate(var(--radio-signos)) rotate(-90deg); }
+.leo { transform: translate(-50%, -50%) rotate(120deg) translate(var(--radio-signos)) rotate(-120deg); }
+.virgo { transform: translate(-50%, -50%) rotate(150deg) translate(var(--radio-signos)) rotate(-150deg); }
+.libra { transform: translate(-50%, -50%) rotate(180deg) translate(var(--radio-signos)) rotate(-180deg); }
+.escorpio { transform: translate(-50%, -50%) rotate(210deg) translate(var(--radio-signos)) rotate(-210deg); }
+.sagitario { transform: translate(-50%, -50%) rotate(240deg) translate(var(--radio-signos)) rotate(-240deg); }
+.capricornio { transform: translate(-50%, -50%) rotate(270deg) translate(var(--radio-signos)) rotate(-270deg); }
+.acuario { transform: translate(-50%, -50%) rotate(300deg) translate(var(--radio-signos)) rotate(-300deg); }
+.piscis { transform: translate(-50%, -50%) rotate(330deg) translate(var(--radio-signos)) rotate(-330deg); }
+
+/* PLANETAS */
+.planeta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.sol { transform: translate(-50%, -50%) rotate(0deg) translate(var(--radio-planetas)) rotate(0deg); }
+.luna { transform: translate(-50%, -50%) rotate(27deg) translate(var(--radio-planetas)) rotate(-27deg); }
+.mercurio { transform: translate(-50%, -50%) rotate(54deg) translate(var(--radio-planetas)) rotate(-54deg); }
+.venus { transform: translate(-50%, -50%) rotate(81deg) translate(var(--radio-planetas)) rotate(-81deg); }
+.marte { transform: translate(-50%, -50%) rotate(108deg) translate(var(--radio-planetas)) rotate(-108deg); }
+.jupiter { transform: translate(-50%, -50%) rotate(135deg) translate(var(--radio-planetas)) rotate(-135deg); }
+.saturno { transform: translate(-50%, -50%) rotate(162deg) translate(var(--radio-planetas)) rotate(-162deg); }
+.urano { transform: translate(-50%, -50%) rotate(189deg) translate(var(--radio-planetas)) rotate(-189deg); }
+.neptuno { transform: translate(-50%, -50%) rotate(216deg) translate(var(--radio-planetas)) rotate(-216deg); }
+.pluton { transform: translate(-50%, -50%) rotate(243deg) translate(var(--radio-planetas)) rotate(-243deg); }
+.quiron { transform: translate(-50%, -50%) rotate(270deg) translate(var(--radio-planetas)) rotate(-270deg); }
+.nodo { transform: translate(-50%, -50%) rotate(297deg) translate(var(--radio-planetas)) rotate(-297deg); }
+.lilith { transform: translate(-50%, -50%) rotate(324deg) translate(var(--radio-planetas)) rotate(-324deg); }
+
+/* ICONO PLANETA */
+.icono-planeta {
+  display: inline-block;
+  pointer-events: none;
+  font-size: var(--planeta-pc);
+  animation: contraPlaneta var(--velocidad) linear infinite;
+
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+/* COLORES */
+.sol .icono-planeta { color: #FFD700; }
+.luna .icono-planeta { color: #C0C0C0; }
+.mercurio .icono-planeta { color: #a9a9a9; }
+.venus .icono-planeta { color: #ff69b4; }
+.marte .icono-planeta { color: #ff4500; }
+.jupiter .icono-planeta { color: #ff8c00; }
+.saturno .icono-planeta { color: #d2b48c; }
+.urano .icono-planeta { color: #00ffff; }
+.neptuno .icono-planeta { color: #4169e1; }
+.pluton .icono-planeta { color: #9370db; }
+.quiron .icono-planeta { color: #ffffff; }
+.nodo .icono-planeta { color: #00ffcc; }
+.lilith .icono-planeta { color: #ff1493; }
+
+/* ANIMACIONES */
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes girarPlanetas {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes contraGiro {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes contraPlaneta {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* FOOTER */
+.footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 60px 20px 30px;
+  background: linear-gradient(to top, #000000, transparent);
+  text-align: center;
+}
+
+/* 🔥 RESPONSIVE */
+@media (max-width: 600px) 
+
+  :root {
+    --radio-signos: clamp(90px, 35vw, 160px);
+    --radio-planetas: clamp(80px, 24vw, 180px);
+  }
+
+  .logo {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .icono-planeta {
+    font-size: var(--planeta-mobile);
+  }
+  /* 🔥 BOTÓN HAMBURGUESA */
+.menu-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* 🔥 MENÚ */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(10px);
+
+  transition: 0.4s ease;
+  z-index: 99;
+
+  padding: 80px 20px;
+}
+
+/* ACTIVO */
+.menu.activo {
+  right: 0;
+}
+
+/* CONTENIDO */
+.menu-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu h3 {
+  margin-top: 20px;
+  color: #ffd79b;
+}
+
+.menu a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: white;
+  text-shadow: 0 0 10px white;
+}
