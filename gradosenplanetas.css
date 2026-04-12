@@ -285,12 +285,12 @@ body {
 }
 
 /* 🔥 RESPONSIVE */
-@media (max-width: 600px) 
-
+@media (max-width: 600px) {
   :root {
     --radio-signos: clamp(90px, 35vw, 160px);
     --radio-planetas: clamp(80px, 24vw, 180px);
   }
+}
 
   .logo {
     font-size: 28px;
@@ -489,5 +489,68 @@ body {
     padding: 12px 22px;
   }
 }
+   
+.famosos-grado {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.famosos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.famoso {
+  width: 100px;
+}
+
+.famoso img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.famoso img:hover {
+  transform: scale(1.1);
+}
+
+.famoso p {
+  margin-top: 8px;
+  font-size: 14px;
+}
 
 
+
+/* carrusel */
+.carrusel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.famoso {
+  min-width: 120px;
+  scroll-snap-align: center;
+  flex-shrink: 0; /* 🔥 clave */
+}
+/* Que quede fijo en pc */
+@media (min-width: 768px) {
+
+  .carrusel {
+    overflow-x: visible; /* ❌ sacamos scroll */
+  }
+
+  .carrusel-track {
+    width: 100%;
+    justify-content: center; /* 🔥 centra todo */
+  }
+
+}
