@@ -230,6 +230,22 @@ p {
     font-size: 16px;
   }
 }
-
-
+.contenido {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.contenido p {
+  word-wrap: break-word;
+}
+.contenido {
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+.contenido {
+  width: 100%;
+  box-sizing: border-box;
+}
 
