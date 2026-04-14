@@ -294,7 +294,7 @@ body {
   .icono-planeta {
     font-size: var(--planeta-mobile);
   }
-  /* 🔥 BOTÓN HAMBURGUESA */
+ /* 🔥 BOTÓN HAMBURGUESA */
 .menu-toggle {
   font-size: 30px;
   cursor: pointer;
@@ -319,17 +319,18 @@ body {
 
   padding: 80px 20px;
 
-  /* 🔥 CLAVE */
   overflow-y: auto;
-  scrollbar-width: thin;
-  .menu::-webkit-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+}
+
+/* SCROLL CHROME */
+.menu::-webkit-scrollbar {
   width: 6px;
 }
 
 .menu::-webkit-scrollbar-thumb {
   background: #ffd79b;
   border-radius: 10px;
-} /* Firefox */
 }
 
 /* ACTIVO */
@@ -342,7 +343,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   min-height: 100%;
 }
 
@@ -361,6 +361,32 @@ body {
   color: white;
   text-shadow: 0 0 10px white;
 }
+
+/* ITEM */
+.menu-item {
+  cursor: pointer;
+}
+
+/* 🔥 CONTENEDOR TITULO (SIGNO + FLECHA) */
+.menu-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔥 FLECHA */
+.flecha {
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* 🔥 FLECHA ACTIVA (gira) */
+.flecha.activa {
+  transform: rotate(180deg);
+}
+
+
 
 
 /* 📱 FIX RESPONSIVE REAL */

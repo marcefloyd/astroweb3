@@ -114,3 +114,29 @@ const menu = document.getElementById("menu");
 toggle.addEventListener("click", () => {
   menu.classList.toggle("activo");
 });
+
+//menu desplegable //
+const flechas = document.querySelectorAll(".flecha");
+
+flechas.forEach(flecha => {
+  flecha.addEventListener("click", function(e) {
+    e.stopPropagation();
+
+    const submenu = this.parentElement.nextElementSibling;
+
+    document.querySelectorAll(".submenu").forEach(menu => {
+      if (menu !== submenu) {
+        menu.classList.remove("activo");
+      }
+    });
+
+    document.querySelectorAll(".flecha").forEach(f => {
+      if (f !== this) {
+        f.classList.remove("activa");
+      }
+    });
+
+    submenu.classList.toggle("activo");
+    this.classList.toggle("activa");
+  });
+});

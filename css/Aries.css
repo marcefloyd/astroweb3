@@ -61,7 +61,34 @@ body {
   margin-bottom: 20px;
   font-size: 18px;
 }
-
+/* grados  */
 .datos p {
   margin: 5px 0;
+}
+
+.grados {
+  text-align: center;
+}
+
+.grid-grados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.grid-grados a {
+  padding: 10px;
+  background: rgba(0, 150, 255, 0.2);
+  border: 1px solid rgba(0,150,255,0.5);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #00bfff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.grid-grados a:hover {
+  background: rgba(0,150,255,0.5);
+  transform: scale(1.1);
 }

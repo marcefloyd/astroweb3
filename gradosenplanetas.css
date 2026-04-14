@@ -359,6 +359,58 @@ body {
   text-shadow: 0 0 10px white;
 }
 
+/* 🔥 CONTENEDOR TITULO (SIGNO + FLECHA) */
+.menu-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🔥 FLECHA */
+.flecha {
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* 🔥 FLECHA ACTIVA (gira) */
+.flecha.activa {
+  transform: rotate(180deg);
+}
+
+/* 🔥 SUBMENU (OCULTO POR DEFECTO) */
+.submenu {
+  display: none;
+  padding-left: 12px;
+  margin-top: 6px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 🔥 SUBMENU ACTIVO */
+.submenu.activo {
+  display: block;
+}
+
+/* 🔥 ITEMS */
+.submenu li {
+  list-style: none;
+}
+
+/* 🔥 LINKS */
+.submenu a {
+  display: block;
+  padding: 6px 0;
+  color: #00bfff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* 🔥 HOVER */
+.submenu a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
 
 /* 📱 FIX RESPONSIVE REAL */
 @media (max-width: 600px) {
