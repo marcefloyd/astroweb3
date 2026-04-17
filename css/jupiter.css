@@ -8,13 +8,13 @@ body {
   background: radial-gradient(circle at center, #1a0033, #000000 70%);
   overflow-x: hidden;
   overflow-y: auto;
-  position: relative; /* 🔥 IMPORTANTE */
+  position: relative;
 }
 
 /* ✨ AURA */
 body::before {
   content: "";
-  position: fixed; /* 🔥 evita bugs de scroll */
+  position: fixed;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -39,16 +39,22 @@ body::before {
 .slider {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
+/* 🔥 IMPORTANTE */
 .slides {
   display: flex;
   transition: transform 0.5s ease;
+  width: 100%;
 }
 
 .slide {
   min-width: 100%;
   flex-shrink: 0;
+
+  /* 🔥 CLAVE PARA SCROLL VERTICAL */
+  height: auto;
 }
 
 /* CONTENIDO */
@@ -110,7 +116,7 @@ p {
   box-shadow: 0 0 30px #ffa500;
 }
 
-/* 🔥 CONTROLES (flechas) */
+/* 🔥 CONTROLES */
 .controles {
   position: fixed;
   top: 50%;
@@ -147,13 +153,24 @@ p {
 /* 📱 MOBILE */
 @media (max-width: 768px) {
 
+  /* 🔥 CLAVE TOTAL */
+  body {
+    overflow-y: auto;
+  }
+
+  .slider {
+    overflow: visible;
+  }
+
   .controles {
     display: none;
   }
 
   .slides {
     overflow-x: auto;
+    overflow-y: visible; /* 🔥 permite scroll vertical */
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide {
