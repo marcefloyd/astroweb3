@@ -192,3 +192,24 @@ p {
     padding: 80px 15px 60px;
   }
 }
+@media (max-width: 768px) {
+
+  .controles {
+    display: none;
+  }
+
+  .slides {
+    display: block; /* 🔥 clave: deja de ser horizontal */
+  }
+
+  .slide {
+    min-width: 100%;
+    margin-bottom: 40px; /* espacio entre slides */
+  }
+
+}
+.slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
