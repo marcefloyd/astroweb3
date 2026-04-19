@@ -17,13 +17,20 @@ Incluye navegación por signos, grados específicos y textos interpretativos des
 
 ## Tecnologías utilizadas
 
-- HTML5  
-- CSS3  
-- JavaScript  
-- Diseño Responsive (Mobile & Desktop)  
-- Vercel (deploy)
-
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- JSON (estructura de datos)
+- Fetch API
+- Node.js (preparado para integración con IA)
 ---
+## Estructura de datos
+
+El contenido se organiza mediante archivos JSON estructurados por signo y grado, lo que permite:
+
+- Escalabilidad del sistema
+- Separación entre lógica y contenido
+- Renderizado dinámico en el frontend
 
 ## Funcionalidades
 
@@ -34,6 +41,15 @@ Incluye navegación por signos, grados específicos y textos interpretativos des
 - Experiencia adaptable a dispositivos móviles  
 
 ---
+## Integración con IA (en desarrollo)
+
+El proyecto está preparado para integrar inteligencia artificial mediante API (futuro).
+
+- Generación automática de interpretaciones
+- Expansión de contenido
+- Personalización de resultados
+
+> Actualmente esta funcionalidad se encuentra en desarrollo.
 
 ##  Objetivo del proyecto
 
@@ -41,7 +57,8 @@ El objetivo es construir una plataforma que combine:
 
 - Contenido astrológico profundo  
 - Interfaz clara y moderna  
-- Navegación intuitiva  
+- Navegación intuitiva
+- integrar inteligencia artificial mediante API 
 
 Además, funciona como práctica real de desarrollo web y diseño UX/UI.
 
@@ -61,22 +78,33 @@ Además, funciona como práctica real de desarrollo web y diseño UX/UI.
 
 astroweb3/
 │
-├── assets/            # Imágenes y recursos visuales
-├── css/               # Archivos de estilos
+├── assets/                # Imágenes y recursos visuales
+│
+├── css/                   # Estilos
 │   └── elementos.css
 │
-├── htmls/             # Páginas por signo y grados
+├── htmls/                 # Páginas y datos
 │   ├── aries.html
 │   ├── acuario.html
 │   ├── capricornio.html
-│   └── ...
+│   ├── ...
+│   └── grados.json        # Base de datos estructurada por signo y grado
 │
-├── grado10aries.js    # Lógica de sliders e interacción
-├── grado22aries.html
-├── grado23aries.html
-├── grado24aries.html
-├── grado25aries.html
-├── grado26aries.html
+├── js/ (o raíz)           # Lógica del frontend
+│   ├── script.js          # Render dinámico principal
+│   ├── ia.js              # Conexión con backend (IA en desarrollo)
+│   ├── grado10aries.js    # Lógica específica (legacy/sliders)
+│
+├── grados individuales    # (legacy - migrando a JSON)
+│   ├── grado22aries.html
+│   ├── grado23aries.html
+│   ├── grado24aries.html
+│   ├── grado25aries.html
+│   ├── grado26aries.html
+│
+├── server.js              # Backend Node.js (endpoint /interpretar)
+├── package.json
+├── .env                   # Variables sensibles (API KEY no incluida)
 │
 └── README.md
-```
+---
