@@ -606,4 +606,22 @@ body {
   }
 
 }
+#resultadoIA {
+  max-height: 400px;   /* límite de altura */
+  overflow-y: auto;    /* scroll vertical */
+  padding: 15px;
+  margin-top: 20px;
 
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+
+  text-align: left;
+}
+#resultadoIA::-webkit-scrollbar {
+  width: 6px;
+}
+
+#resultadoIA::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
